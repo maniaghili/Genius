@@ -29,7 +29,7 @@ const courseDetail = memo(() => {
       <div className="w-[95%]  gap-3  flex md:flex-row ssm:flex-col ssm:gap-5 justify-center">
        <div className="md:w-[65%] ssm:w-full overflow-hidden ">
           <div className="flex flex-col items-center  justify-center">
-           <img src={`https://roocket.liara.run/courses/covers/${courseInfos?.cover}`} className="rounded-2xl w-full mt-4" alt="" />
+           <img src={`https://academic.liara.run/courses/covers/${courseInfos?.cover}`} className="rounded-2xl w-full mt-4" alt="" />
            <div className="bg-slate-200 dark:bg-gray-800 w-[95%] rounded-b-2xl h-fit flex flex-col gap-2">
             <p className="font-bold text-[13px] mr-3 text-green-500">{courseInfos?.isComplete?'تکمیل شده':'در حال تکمیل'}</p>
             <span className="font-bold mr-3">{courseInfos?.name}</span>
@@ -94,7 +94,7 @@ const courseDetail = memo(() => {
             بدون شک در حال حاضر یکی از پرکاربردترین فریمورک‌های جاوا اسکریپتی که می‌توانید در دنیای وب پیدا بکنید {courseInfos?.name} است. زمانی که یک فریمورک در زمینه‌های مختلف کاربرد داشته باشد نیز در نهایت باعث خواهد شد که فرصت‌های شغلی بسیار زیادی داشته باشد. اما آیا فکر می‌کنید برای قبول شدن در یک فرصت شغلی مناسب، تمام موارد لازم را در اختیار دارید؟ اگر حس می‌کنید در رابطه با این قضیه مطمئن نیستید و شک دارید، بهتر است با این دوره آموزشی همراه باشید.
             </span>
             <h2 className="font-bold">{courseInfos?.name}</h2>
-            <img src={`https://roocket.liara.run/courses/covers/${courseInfos?.cover}`} className="rounded-2xl mt-4" alt="" />
+            <img src={`https://academic.liara.run/courses/covers/${courseInfos?.cover}`} className="rounded-2xl mt-4" alt="" />
             <span className="opacity-70 text-[13px]">
             زمانی که شما با موضوعات مختلف یک ابزار آشنایی پیدا کردید، یک نکته مهم که باید در نظر داشته باشید این است که چگونه با کنار هم قرار دادن ویژگی‌های مختلف خواهید توانست یک پروژه واقعی را ایجاد کنید. این موضوع دقیقا هدفی است که یک آموزش پروژه محور دنبال می‌کند. در یک آموزش پروژه محور در ابتدا شما به صورت مستقیم یا غیر مستقیم با مفاهیم اولیه آشنا شده و سپس فرایند یادگیری موضوعات جدید را در خلال ایجاد پروژه شروع خواهید کرد.
 

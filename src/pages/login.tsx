@@ -29,7 +29,7 @@ const login:FC =memo(() => {
         identifier:e.userNic,
         password:e.userPass
     }
-       axios.post("https://roocket.liara.run/v1/auth/login",userinfo)
+       axios.post("https://academic.liara.run/v1/auth/login",userinfo)
        .then(res=>{
         handleUserRegister(res.data)
         getMe().then((infos:any)=>{
