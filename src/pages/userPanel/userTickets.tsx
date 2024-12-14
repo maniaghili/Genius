@@ -9,7 +9,7 @@ const userTickets = memo(() => {
 
 
   useEffect(()=>{
-    axios.get("http://localhost:4000/v1/tickets/user",{
+    axios.get("https://roocket.liara.run/v1/tickets/user",{
       headers:{
         "Authorization" : `Bearer ${user.userToken}`
       }

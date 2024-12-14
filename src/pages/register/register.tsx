@@ -35,7 +35,7 @@ const register:FC =memo(() => {
         phone:e.phone
      }
      
-      axios.post("http://localhost:4000/v1/auth/register",userInfo,{
+      axios.post("https://roocket.liara.run/v1/auth/register",userInfo,{
       }).then(res=>{
         handleUserRegister(res.data)
         Infos.setUserToken(res.data.accessToken)

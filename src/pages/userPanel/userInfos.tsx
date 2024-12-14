@@ -3,7 +3,6 @@ import { userInfo } from "../../context/authContext"
 const userInfos = memo(() => {
 
  const user = useContext(userInfo)
- console.log(user.userInfos);
  
     return (
       <>

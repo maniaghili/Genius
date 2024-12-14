@@ -6,7 +6,7 @@ type filter = string | undefined
 
 
 const useCourses:FC<filter> = (filters) => {
-  const allCourses = useQuery("Courses",() =>axios.get("http://localhost:4000/v1/courses"),
+  const allCourses = useQuery("Courses",() =>axios.get("https://roocket.liara.run/v1/courses"),
   {staleTime:3000000,
     cacheTime:30000000,
     keepPreviousData:true,

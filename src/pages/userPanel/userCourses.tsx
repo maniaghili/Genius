@@ -8,7 +8,7 @@ const user = useContext(userInfo)
 const [userCourses,setUserCourses] = useState([])
 
  useEffect(()=>{
-  axios.get("http://localhost:4000/v1/users/courses",{headers:
+  axios.get("https://roocket.liara.run/v1/users/courses",{headers:
     {
       "Authorization" : `Bearer ${user.userToken}`
     }

@@ -10,12 +10,9 @@ const searchCourses = memo(() => {
   const [courses,setCourses] = useState([])
   const [allCourses] = useCourses(undefined) as any
   const param = getUrlParam('search')
-    console.log(param);
-    
 
   useEffect(()=>{
     const filteredCourses = allCourses?.filter((course:any)=>course.name.includes(param))
-    console.log(filteredCourses);
     
     setCourses(filteredCourses)
   },[allCourses?.length,param])

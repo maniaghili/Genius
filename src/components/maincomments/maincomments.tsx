@@ -1,4 +1,6 @@
 
+import prof from './../../../public/01.jpeg'
+
 const maincomments = () => {
   return (
     <div className=" rounded-3xl border dark:border-gray-600 border-zinc-300 flex flex-col items-center">
@@ -10,7 +12,7 @@ const maincomments = () => {
         پیدا می‌کنید. این امر بسیار قابل ارزش است.
     </div>
     <div className="flex items-center my-5">
-        <img src="../../../public/01.jpeg" className="w-10 h-10 rounded-full" alt="" />
+        <img src={prof} className="w-10 h-10 rounded-full" alt="" />
         <div>
             <p>جلال بهرامی راد</p>
             <span className="opacity-70">
