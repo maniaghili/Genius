@@ -1,0 +1,33 @@
+.drop_down{
+    background-color: #ffffff;
+    visibility: hidden;
+}
+
+.active{
+    visibility: visible;
+}
+
+
+.jjl:hover+.gg{
+    transition:all 300ms ease;
+    -moz-transition:all 300ms ease;
+    -ms-transition:all 300ms ease;
+    -o-transition:all 300ms ease;
+    rotate: 180deg;
+    -webkit-transition:all 300ms ease;
+}
+
+.jjl{
+    width: 110px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.aa{
+    list-style:disc;
+    cursor: pointer;
+}
+ 
+ 
+ 

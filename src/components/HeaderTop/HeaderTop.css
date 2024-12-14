@@ -1,0 +1,34 @@
+.akademi-header{
+    font-size: 20px;
+}
+
+
+
+.header_list{
+    display: flex;
+}
+
+.active_colaps{
+    background-color: rgba(237, 237, 237, 0.4);
+    
+    right: 0%;
+    transition: all 300ms ease;
+    border-radius:15px 0px 0px 15px ;
+}
+
+.colaps{
+    right: -100%;
+    transition: all 500ms ease;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+}
+
+
+@media only screen and (max-width:992px){
+
+    .header_list{
+        display: none;
+    }
+}

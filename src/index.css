@@ -1,0 +1,27 @@
+@tailwind base; 
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --MyBgColor:#fff;
+    --MyTextColor:#1d4ed8 ;
+    --bgTwoColor:#e0e0e0;
+}
+
+body {
+    font-family:'Samim';
+}
+
+@font-face {
+    font-family: 'Mj_Mokhtar';
+    src: local('Mj_Mokhtar'), url(./fonts/Mj_Mokhtar.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Mj_Free_0';
+    src: local('Mj_Free_0'), url(./fonts/Mj_Free_0.ttf) format('truetype');
+  }
+  @font-face {
+    font-family: 'Samim';
+    src: local('Samim'), url(./fonts/Samim.ttf) format('truetype');
+  }
