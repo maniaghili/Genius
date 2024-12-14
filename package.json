@@ -7,11 +7,14 @@
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy" : "gh-pages -d dist",
+    "deploy": "gh-pages -d dist",
+    "build:tailwind-main": "npx tailwindcss -i ./src/assets/styles/tailwind/input/input.css -o ./src/assets/styles/tailwind/output/output.css --watch",
+    "build:tailwind-toggle": "npx tailwindcss -i ./src/assets/styles/tailwind/input/site/courses/toggle-box.css -o ./src/assets/styles/tailwind/output/site/courses/toggle-box.css",
+    "build:tailwind-comment__answer": "npx tailwindcss -i ./src/assets/styles/tailwind/input/site/coursePreview/comment-answer.css -o ./src/assets/styles/tailwind/output/site/coursePreview/comment-answer.css",
+    "t": "run-p  build:tailwind-main build:tailwind-toggle build:tailwind-comment__answer",
     "dev": "vite",
-    "build" :"tsc && vite build",
-    "start": "vite",
-    "lint": "eslint .",
+    "build": "tsc && vite build",
+    "lint": "eslint -c .eslintrc.json ./src/**/**/*.{ts,tsx} --fix",
     "preview": "vite preview"
   },
   "dependencies": {
