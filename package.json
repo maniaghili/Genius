@@ -1,6 +1,7 @@
 {
-  "homepage": "https://maniaghili.github-io/genius/",
+ 
   "name": "genius",
+  "homepage": "https://maniaghili.github-io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
