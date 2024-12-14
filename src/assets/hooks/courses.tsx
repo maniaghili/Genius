@@ -6,6 +6,7 @@ type filter = string | undefined
 
 
 const useCourses:FC<filter> = (filters) => {
+  
   const allCourses = useQuery("Courses",() =>axios.get("https://roocket.liara.run/v1/courses"),
   {staleTime:3000000,
     cacheTime:30000000,
@@ -13,8 +14,8 @@ const useCourses:FC<filter> = (filters) => {
 })
 
 if(filters){
-   let rr = allCourses?.data?.data?.filter((course:any)=>course.categoryID.name == filters)
-  return [rr]
+   let filteredCourses = allCourses?.data?.data?.filter((course:any)=>course.categoryID.name == filters)
+  return [filteredCourses]
     
 }else{
 
