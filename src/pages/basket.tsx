@@ -19,7 +19,7 @@ console.log(courses);
       <>
       <HeaderTop />
       <div className="w-full flex justify-center ">
-          <div className="w-[95%] flex ssm:flex-col lg:flex-row gap-2">
+          <div className="w-[95%] flex ssm:flex-col mt-4 lg:flex-row gap-2">
              <div className="h-fit lg:w-2/3 ssm:w-full">
                  <div className="bg-slate-200 dark:bg-gray-800 dark:text-gray-300 mt-5 h-24 flex items-center rounded-xl">
                       <div className='lg:w-full md:h-3/5 flex mr-5 h-full gap-3 '>
