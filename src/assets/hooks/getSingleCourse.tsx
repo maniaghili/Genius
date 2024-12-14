@@ -4,7 +4,7 @@ import { useQuery } from "react-query"
 
 export const useSingleCourse = (shortName:string) => {
 
-const {data : course} = useQuery([shortName,'course'],()=>axios.get(`https://academic.liara.run/${shortName}`),{
+const {data : course} = useQuery([shortName,'course'],()=>axios.get(`https://academic.liara.run/v1/${shortName}`),{
     staleTime:1000000,
     cacheTime:1000000
   })

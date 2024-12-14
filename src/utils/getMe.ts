@@ -9,7 +9,7 @@ const getMe =async() =>{
       return undefined
    }
   
-  let user =await axios.get('http://localhost:4000/v1/auth/me',{
+  let user =await axios.get('https://academic.liara.run/v1/auth/me',{
       headers: {"Authorization" : `Bearer ${userToken}`}
    }).then(data=>data.data)
 

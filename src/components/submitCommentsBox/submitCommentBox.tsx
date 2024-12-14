@@ -16,7 +16,7 @@ const submitCommentBox = ({shortName}:{shortName:string}) => {
       score:5
     }
 
-    axios.post("http://localhost:4000/v1/comments",commentDetail,{
+    axios.post("https://academic.liara.run/v1/comments",commentDetail,{
       headers:{
         "Authorization" : `Bearer ${user.userToken}`
       }

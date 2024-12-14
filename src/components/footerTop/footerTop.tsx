@@ -6,7 +6,7 @@ import { memo } from 'react'
 
 const footerTop = memo(() => {
 
-  const {data : articles} = useQuery('Articles',()=>axios.get("http://localhost:4000/v1/articles")
+  const {data : articles} = useQuery('Articles',()=>axios.get("https://academic.liara.run/v1/articles")
   .then(article=>article.data),{
    staleTime:1000000,
    cacheTime:1000000 })
