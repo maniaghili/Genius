@@ -5,8 +5,6 @@ import Aos from 'aos';
 import { memo, useEffect } from 'react';
 
 const coursebox:React.FC = memo(({...course}:any) => {
-    console.log(course);
-    
     useEffect(()=>{
         Aos.init()
     })
@@ -16,7 +14,7 @@ const coursebox:React.FC = memo(({...course}:any) => {
     
         <div className="md:w-11/12 ssm:w-full min-h-96 rounded-3xl dark:text-gray-300  transition-all flex flex-col items-center" data-aos="zoom-in-up">              
                 <Link to={`/courseDetail/${course.shortName}`} className='overflow-hidden rounded-3xl'>
-                <img src={`https://academic.liara.run/courses/covers/${course.cover}`} className="w-full h-5/12 duration-300 hover:scale-105 " alt="" />
+                <img src={`https://academic.liara.run/v1/courses/covers/${course.cover}`} className="w-full h-5/12 duration-300 hover:scale-105 " alt="" />
                 </Link>
                 <div className="w-5/6 h-16  rounded-2xl bg-slate-100 dark:bg-gray-800">
                     <div className="flex flex-col justify-center p-1">
@@ -35,7 +33,7 @@ const coursebox:React.FC = memo(({...course}:any) => {
                     </div>
                     <div className="w-full h-16 flex justify-between items-center">
                         <div className="w-9/12  h-full flex items-center">
-                        <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
+                        <img src={`https://academic.liara.run/v1/courses/covers/${course.cover}`} className="w-10 rounded-full h-10" alt="user" />
                         <div className="h-10 w-full">
                             <p className="opacity-70 ss">مدرس دوره:</p>
                             <span className="ss">{course.creator}</span>
