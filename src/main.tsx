@@ -1,6 +1,6 @@
 
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
+import {  HashRouter } from 'react-router-dom'
 import './fonts/Mj_Mokhtar.ttf'
 import './fonts/Mj_Free_0.ttf'
 import './fonts/Samim.ttf'
@@ -11,9 +11,9 @@ import { AuthContextProvider } from './context/authContext.tsx'
 createRoot(document.getElementById('root')!).render(
    <AuthContextProvider>
 
-      <BrowserRouter>
+      <HashRouter>
        <App />
-      </BrowserRouter>
+      </HashRouter>
    </AuthContextProvider>
   
 )
