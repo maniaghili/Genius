@@ -12,7 +12,7 @@ const CatSeries = lazy(()=>import("../pages/catSeries"))
 const Series = lazy(()=>import ("../pages/series"))
 const SearchCoursesPage = lazy(()=>import("../pages/searchCoursesPage"))
 export const Router:RouteObject[] = [
-    {path:"/" ,element: <Index />},
+    {path:"/Genius" ,element: <Index />},
     {path:'/login', element:<Login />},
     {path:'/register' ,element:<Register />},
     {path:'/series/:catName' ,element:<CatSeries />},
