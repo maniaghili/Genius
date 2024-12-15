@@ -1,6 +1,7 @@
 import { memo, useContext, useEffect, useState } from "react"
 import Coursebox from "../../components/coursebox/coursebox"
 import { userInfo } from "../../context/authContext"
+import IsNotData from "../../components/isNotData/isNotData"
 import axios from "axios"
 const userCourses =memo(() => {
 
@@ -27,9 +28,9 @@ const [userCourses,setUserCourses] = useState([])
                       <p className="text-[14px] font-bold">دوره های در حال یادگیری</p>
                   </div>
                   <div className="grid ssm:mb-48 md:mb-0 ssm:gap-44 sa:gap-36  md:gap-5 md:grid-cols-2 lg:grid-cols-3 w-full ">
-                      {userCourses?.map((course:any)=>
+                      {userCourses?userCourses?.map((course:any)=>
                       <Coursebox {...course.course} />
-                      )}
+                      ):<IsNotData dataName="شما هنوز در هیچ دوره ای ثبت نام نکرده اید" />}
                   </div>
     </>
     )
