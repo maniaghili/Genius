@@ -10,6 +10,7 @@ const searchCourses = memo(() => {
   const [courses,setCourses] = useState([])
   const [allCourses] = useCourses(undefined) as any
   const param = getUrlParam('search')
+console.log(param);
 
   useEffect(()=>{
     const filteredCourses = allCourses?.filter((course:any)=>course.name.includes(param))
@@ -17,7 +18,6 @@ const searchCourses = memo(() => {
     setCourses(filteredCourses)
   },[allCourses?.length,param])
 
- 
  
     return (
       <>
@@ -39,7 +39,7 @@ const searchCourses = memo(() => {
         <div className="w-full flex justify-center">
           <div className="w-[96%] flex justify-center">
           <div className=" my-4 justify-center items-center ssm:gap-28 ssm:mb-24 sa:gap-8 ssm:grid-cols-1 md:gap-5 lg:grid-cols-3 md:grid-cols-2 grid w-full h-full  sa:grid-cols-2 ">
-           {courses?.length?courses?.map((course : any)=>
+           {courses?courses?.map((course : any)=>
             <CourseBox key={course._id} {...course} />
             ):<IsNotData dataName="دوره ای مطابق با سرچ شما وجود نداشت" />}
            </div>

@@ -1,9 +1,11 @@
 const getUrlParam = (param: string) => {
 
-  const urlParams = new URLSearchParams(location.search)
+    const splitedHash = location.hash.split('?')
 
-  return urlParams.get(param)
-}
+    const urlParams = new URLSearchParams(splitedHash[1])
+    return urlParams.get(param)
+  }
+
 
 type ValueType = string | number | boolean
 
