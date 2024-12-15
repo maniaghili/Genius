@@ -1,7 +1,8 @@
-import { PropsWithChildren, useState } from "react"
+import { PropsWithChildren, useContext, useState } from "react"
 import './HeaderLi.css'
 import { Link } from "react-router-dom"
 import useCourses from "../../assets/hooks/courses"
+import { allCourse } from "../../context/coursesProvider"
 
 type categoriesType = {
   categories:any
@@ -12,7 +13,8 @@ const HeaderLi:React.FC<PropsWithChildren<categoriesType>> = ({categories,childr
 const [rightMenu,setRightMenu] = useState<undefined | string>(undefined) 
 const [isShowMenu,setIsShowMenu] = useState<Boolean>(false)
 
-const [allCourses] = useCourses(undefined) as any
+
+const allCourses = useContext(allCourse) as any
 
   return (
     <li className='group relative dark:text-white h-14 flex items-center gap-1'>
@@ -45,9 +47,10 @@ const [allCourses] = useCourses(undefined) as any
               <ul className="mr-7 aa mt-2">
                 
                 
-               {allCourses?.map((course : any)=>
-                  course.categoryID.title == rightMenu && <li key={course._id} className="hover:text-blue-600 text-[14px] font-bold"><Link to={`/courseDetail/${course.shortName}`}>{course.name}</Link></li>
-               )}
+               {allCourses?.courses?.length&&
+               allCourses.courses.map((course : any)=>
+                course.categoryID.title == rightMenu && <li key={course._id} className="hover:text-blue-600 text-[14px] font-bold"><Link to={`/courseDetail/${course.shortName}`}>{course.name}</Link></li>
+             )}
               </ul>
               </div>
               
