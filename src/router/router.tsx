@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import {userProfile} from "../router/userprofile";
 import { RouteObject } from "react-router-dom";
-const Index = lazy(()=>import("../pages/Index"));
+import Index from "../pages/Index";
 const UserProfile =  lazy(()=>import ("../pages/userprofile"));
 const Basket = lazy(()=>import("../pages/basket"))
 const CourseDetail  = lazy(()=>import("../pages/courseDetail"))
