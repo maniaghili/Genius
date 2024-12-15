@@ -21,8 +21,6 @@ const register:FC =memo(() => {
     const Navigate = useNavigate()
     let Infos = useContext(userInfo)
     
-    
-    
     const {register,handleSubmit,formState:{errors}} = useForm()
     
     const registerHandler = (e:userInfoType) => {
@@ -81,11 +79,11 @@ const register:FC =memo(() => {
                       {errors.userName && <span className="text-[9px] w-fit font-bold text-red-600">{errors.userName.message  as ReactNode}</span>}
                       <input type="text" {...register('name',{required:'نام خود را وارد نمایید'})} placeholder="نام خود را وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" /> 
                       {errors.name && <span className="text-[9px] w-fit font-bold text-red-600">{errors.name.message as ReactNode}</span>}
-                      <input type="text" {...register('password',{minLength:{value:8,message:'8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('password',{required:'رمز عبور خالی است',minLength:{value:8,message:'8 رقم الزامیست'}})} placeholder="رمز عبور خود را وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       {errors.password && <span className="text-[9px] w-fit font-bold text-red-600">{errors.password.message  as ReactNode}</span>}
                       <input type="text" {...register('phone',{required:'شماره تماس را وارد کنید'})} placeholder="شماره تماس خود ر وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       {errors.phone && <span className="text-[9px] w-fit font-bold text-red-600">{errors.phone.message  as ReactNode}</span>}
-                      <input type="text" {...register('email',{required:'وارد کردن ایمیل الزامی است'})} placeholder="ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
+                      <input type="text" {...register('email',{required:'ایمیل خالی است',pattern:{value:/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,messege:'ایمیل نامعتبر است'} as any,})} placeholder="ایمیل خود را وارد نمایید" dir="ltr" className="bg-gray-50 dark:bg-gray-800 dark:border-gray-700 border form-input w-full h-11 !ring-0 !ring-offset-0 bg-secondary border-border focus:border-border rounded-xl text-sm text-foreground placeholder:text-right px-5" />
                       {errors.email && <span className="text-[9px] w-fit font-bold text-red-600">{errors.email.message  as ReactNode}</span>}
                       
                   </div>

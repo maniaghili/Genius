@@ -16,7 +16,7 @@ const HeaderTop = memo(() => {
     const user = useContext(userInfo)
     const Navigate = useNavigate()
     const [colaps,setColaps] = useState(false)
-    const [categories] = useCategories() 
+    const [categories] = useCategories()
     const nowTheme = useContext(theme) as any
     
     return (
