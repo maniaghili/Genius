@@ -1,17 +1,16 @@
-import { memo } from "react";
+import { memo, useContext } from "react";
 import BreadCrumb from "../BreadCrumb/BreadCrumb";
 import Coursebox from "../coursebox/coursebox";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {  Navigation } from 'swiper/modules';
 import '../../../node_modules/swiper/swiper.css';
 import '../../../node_modules/swiper/modules/navigation.css';
-import useCourses from "../../assets/hooks/courses";
-
+import { allCourse } from "../../context/coursesProvider";
 
 
 const CoursesBox = memo(() => {
   
-  const [allCourses] = useCourses(undefined) as any
+  const allCourses = useContext(allCourse) as any
 
   return (
     <>
@@ -38,7 +37,7 @@ const CoursesBox = memo(() => {
         }}
       >
         {
-          allCourses?.map((course : any)=>(
+          allCourses?.courses?.length&&allCourses.courses.map((course : any)=>(
             <SwiperSlide key={course._id}><Coursebox {...course} /></SwiperSlide>
           ))
         }

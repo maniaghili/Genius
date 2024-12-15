@@ -4,6 +4,8 @@ import './App.css'
 import { Suspense, useLayoutEffect } from 'react'
 import { QueryClientProvider,QueryClient } from 'react-query'
 import { ThemeProvider } from './context/themeProvider'
+import { CoursesProvider } from './context/coursesProvider';
+
 function App() {
 
   const allQueries = new QueryClient()
@@ -16,16 +18,22 @@ function App() {
 
   
 const router = useRoutes(Router)
+
   return (
     
    <ThemeProvider>
+    
+
       <QueryClientProvider client={allQueries}>
-        <Suspense>
+        <CoursesProvider>
+         <Suspense>
             <div className='dark:bg-gray-950'>
               {router}
             </div>
-        </Suspense>
+         </Suspense>
+        </CoursesProvider>
       </QueryClientProvider>
+    
    </ThemeProvider>
     
   )

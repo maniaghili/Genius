@@ -10,7 +10,7 @@ import { AuthContextProvider } from './context/authContext.tsx'
 
 createRoot(document.getElementById('root')!).render(
    <AuthContextProvider>
-
+    
       <HashRouter>
        <App />
       </HashRouter>

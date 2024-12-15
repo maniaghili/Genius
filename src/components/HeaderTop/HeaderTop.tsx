@@ -18,6 +18,7 @@ const HeaderTop = memo(() => {
     const [colaps,setColaps] = useState(false)
     const [categories] = useCategories() 
     const nowTheme = useContext(theme) as any
+    
     return (
       <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 dark:bg-gray-950  border-b-2 dark:border-gray-700  '>
 
