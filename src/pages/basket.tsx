@@ -4,16 +4,14 @@ import IsNotData from "../components/isNotData/isNotData";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import Coursebox from "../components/coursebox/coursebox";
 import { getLocalStorage } from "../utils/util";
+import { showSwal } from "../utils/swal";
 const basket = memo(() => {
 
    const [courses,setCourses] = useState() as any
    useEffect(()=>{
     const aa = getLocalStorage('basket')
     setCourses(JSON.parse(aa as any))
-    
-    
    },[])
-console.log(courses);
 
     return (
       <>
@@ -32,15 +30,15 @@ console.log(courses);
                         </div>
                         <div className=' h-full flex flex-col justify-center '>
                            <p className='text-blue-700 font-bold'>سبد خرید شما</p>
-                           <p className="text-[12px] font-bold opacity-70">۲ دوره به سبد اضافه کرده اید</p>
+                           <p className="text-[12px] font-bold opacity-70 flex gap-1"><p>{courses?.length}</p> دوره به سبد اضافه کرده اید</p>
                         </div>
                       </div>
                  </div>
                  <div className="grid lg:gap-16 md:gap-16 sa:gap-10 ssm:gap-32 sa:grid-cols-2 md:grid-cols-2 mt-5 ssm:mb-36 sa:mb-16 ">
                         
                     {courses?courses.map((course:any)=>
-                       <div className="relative">
-                        <Coursebox key={course._id} />
+                       <div key={course._id} className="relative">
+                        <Coursebox />
                           <div className="h-8 w-8 rounded-2xl bg-red-600 flex justify-center items-center cursor-pointer absolute top-1 right-1">
                               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className=" w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
                           </div>
@@ -78,28 +76,32 @@ console.log(courses);
                   </div>
                   <div className="w-full flex justify-between mt-5 items-center">
                       <p className="font-bold text-[13px]">جمع کل</p>
-                      <p className="font-bold text-[13px]">۱,۰۷۹,۰۰۰
+                      <p className="font-bold text-[13px]">۰
                       تومان</p>
   
                   </div>
                   <div className="w-full flex justify-between mt-5 items-center">
                       <p className="font-bold text-[13px]"> موجودی کیف پول</p>
-                      <p className="font-bold text-[13px]">۵۲۰,۰۰۰
+                      <p className="font-bold text-[13px]">۰
                       تومان</p>
   
                   </div>
                   <div className="w-full flex justify-between mt-5 items-center">
                       <p className="font-bold text-[13px]">تخفیف </p>
-                      <p className="font-bold text-[13px]">۱۸۵,۰۰۰
+                      <p className="font-bold text-[13px]">۰
                       تومان</p>
   
                   </div>
                   <div className="w-full h-[1px] opacity-50 bg-gray-700 mt-8"></div>
                   <div className="w-full flex justify-between mt-5 items-center">
                       <p className="font-bold text-[16px]">مبلغ قابل پرداخت</p>
-                      <p className="font-bold text-[15px]">۱,۰۷۹,۰۰۰تومان</p>
+                      <p className="font-bold text-[15px]">۰تومان</p>
                   </div>
-                  <div className="h-10 items-center bg-blue-700  flex justify-center text-white rounded-3xl my-7">
+                  <div onClick={()=>{showSwal({
+                    title:'ناموفق',
+                    text:"این بخش هنوز تکمیل نشده است",
+                    icon:'info'
+                  })}} className="h-10 cursor-pointer items-center bg-blue-700  flex justify-center text-white rounded-3xl my-7">
                       <p>تکمیل فرایند خرید</p>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                                           <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
