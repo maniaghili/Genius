@@ -1,0 +1,1 @@
+const n=s=>{const a=location.hash.split("?");return new URLSearchParams(a[1]).get(s)},e=(s,a,t="")=>{a=`${a}`;const r=location.hash.split("?"),o=new URLSearchParams(t||r[1]);o.set(s,a),history.pushState({},"",`${location.pathname}${r[0]}?${o.toString()}`)};export{n as g,e as s};
