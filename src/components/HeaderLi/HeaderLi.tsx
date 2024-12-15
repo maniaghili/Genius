@@ -1,7 +1,6 @@
 import { PropsWithChildren, useContext, useState } from "react"
 import './HeaderLi.css'
 import { Link } from "react-router-dom"
-import useCourses from "../../assets/hooks/courses"
 import { allCourse } from "../../context/coursesProvider"
 
 type categoriesType = {
