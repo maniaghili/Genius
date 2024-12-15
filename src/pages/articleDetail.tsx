@@ -18,7 +18,7 @@ const articleDetail = memo(() => {
         <div className="w-[95%]  gap-3  flex md:flex-row ssm:flex-col ssm:gap-5 justify-center">
          <div className="md:w-[65%] ssm:w-full overflow-hidden ">
             <div className="flex flex-col items-center  justify-center">
-             <img src={`https://academic.liara.run/v1/courses/covers/${articles?.cover}`} className="rounded-2xl mt-4 w-full" alt="" />
+             <img src={`https://academic.liara.run/courses/covers/${articles?.cover}`} className="rounded-2xl mt-4 w-full" alt="" />
              <div className="bg-slate-200 dark:bg-gray-800 dark:text-gray-300 w-[95%] rounded-b-2xl h-fit flex flex-col gap-2">
               <span className="font-bold mr-3 mt-5 dark:text-gray-300">{articles?.title}</span>
               <p className="opacity-70 text-[14px] mr-3 mb-5">{articles?.description}</p>
@@ -27,7 +27,7 @@ const articleDetail = memo(() => {
             
             <div className="mt-10 flex flex-col gap-4">
               <h2 className="font-bold dark:text-gray-300">{articles?.title}</h2>
-              <img src={`https://roocket.liara.run/courses/covers/${articles?.cover}`} className="rounded-2xl mt-4" alt="" />
+              <img src={`https://academic.liara.run/courses/covers/${articles?.cover}`} className="rounded-2xl mt-4" alt="" />
               {
                 articles &&<span className="opacity-70 text-[13px] dark:text-gray-300" dangerouslySetInnerHTML={{__html:articles?.body}}></span>
               }
