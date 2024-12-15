@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { showSwal } from "../../utils/swal";
+import { showIziToast } from "../../utils/util";
 
 const sessionBox = ({session}:any) => {
     const [isDrop,setIsDrop] = useState(false)
@@ -40,7 +41,7 @@ const res = Object.groupBy(session,dd)
                 </svg>
             </div>
             {
-              ses.free?<div className="bg-slate-200 dark:bg-gray-700 rounded-xl opacity-70 w-fit flex justify-between h-full hover:text-blue-700 transition-all cursor-pointer items-center px-2">
+              ses.free?<div onClick={()=>{showIziToast('ناموفق','این قسمت هنوز تکمیل نشده است','yellow')}} className="bg-slate-200 dark:bg-gray-700 rounded-xl opacity-70 w-fit flex justify-between h-full hover:text-blue-700 transition-all cursor-pointer items-center px-2">
               <p className="font-bold text-[12px] ">مشاهده</p>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
                   <path fill-rule="evenodd" d="M14.78 14.78a.75.75 0 0 1-1.06 0L6.5 7.56v5.69a.75.75 0 0 1-1.5 0v-7.5A.75.75 0 0 1 5.75 5h7.5a.75.75 0 0 1 0 1.5H7.56l7.22 7.22a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd"></path>
