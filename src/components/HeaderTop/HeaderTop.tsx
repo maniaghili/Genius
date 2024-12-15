@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { userInfo } from "../../context/authContext";
 import { navigateUser } from './funcs/headerFuncs';
 import { useCategories } from '../../assets/hooks/useCategories';
+import { theme } from '../../context/themeProvider';
 
 
 
@@ -16,8 +17,7 @@ const HeaderTop = memo(() => {
     const Navigate = useNavigate()
     const [colaps,setColaps] = useState(false)
     const [categories] = useCategories() 
-       
-
+    const nowTheme = useContext(theme) as any
     return (
       <div className=' sticky w-full top-0 shadow-md z-40  bg-slate-50 dark:bg-gray-950  border-b-2 dark:border-gray-700  '>
 
@@ -83,9 +83,12 @@ const HeaderTop = memo(() => {
           </div>
           <CircleButton id={1}>
           <button className='parent bg-slate-100 dark:text-gray-200 dark:bg-gray-900 hover:bg-slate-200 transition-all '>
+          {nowTheme?.currentTheme == 'dark'?
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 256" className=" text-gray-300" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm8,24a64,64,0,1,0,64,64A64.07,64.07,0,0,0,128,64ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"></path>
+          </svg>:
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-5 h-5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path>
-          </svg>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path>
+      </svg>}
           </button>
           </CircleButton>
           <CircleButton>
