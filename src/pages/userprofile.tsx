@@ -7,6 +7,7 @@ import { Link, Outlet } from "react-router-dom";
 import { showSwal } from "../utils/swal";
 import { removeLocalStorage, showIziToast } from "../utils/util";
 import { userInfo } from "../context/authContext"
+import userP from './../../public/01.jpeg'
 const userProfile = memo(() => {
     const user = useContext(userInfo)
     const Navigate = useNavigate()
@@ -20,7 +21,7 @@ const userProfile = memo(() => {
                  <div className="w-full h-full gap-5 flex items-center flex-col">
                     <div className=" mt-3 w-[95%] flex flex-col gap-6 h-fit sticky top-20">
                       <div className="w-full  flex items-center dark:text-gray-300  ">
-                          <img src="../../../public/01.jpeg" className="w-10 rounded-full h-10" alt="user" />
+                          <img src={userP} className="w-10 rounded-full h-10" alt="user" />
                           <div className="h-10 w-full">
                               <p className="opacity-70 ss">خوش آمدید</p>
                               <span className="ss">مانی علیقلی نژاد</span>

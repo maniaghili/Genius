@@ -14,9 +14,9 @@ const [userCourses,setUserCourses] = useState([])
       "Authorization" : `Bearer ${user.userToken}`
     }
   }).then(data=>{
-    setUserCourses(data.data)
+    setUserCourses(data?.data)
     
-  })
+  }).catch(()=>{})
   
  },[userCourses?.length])
     return (
