@@ -99,7 +99,7 @@ const series = memo(() => {
             
       </div>
          </div>
-          <div className="md:w-3/4 dark:bg-gray-950 ssm:w-full bg-white h-fit">
+          <div className="md:w-3/4 dark:text-gray-300 dark:bg-gray-950 ssm:w-full bg-white h-fit">
            <div className=" h-10 flex items-center lg:gap-3 md:gap-2 ssm:gap-0 opacity-70">
             <div className="flex gap-1 items-center w-24 ">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className=" w-5 h-5">

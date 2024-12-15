@@ -1,45 +1,45 @@
-import { memo, useEffect, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 import HeaderTop from "../components/HeaderTop/HeaderTop";
 import FooterBottom from "../components/footerBottom/footerBottom";
 import CourseBox from "../components/coursebox/coursebox";
-import useCourses from "../assets/hooks/courses";
 import { dateFilterCourses } from "../assets/funcs/filterfuncs";
 import { useCategories } from "../assets/hooks/useCategories";
 import { getUrlParam, setUrlParam } from "../assets/funcs/url";
+import { allCourse } from "../context/coursesProvider";
 
 const series = memo(() => {
 
   const [isSelectCourseType,setIsSelectCourseType] = useState(false)
   const [isCategoryCourse,setIsCategoryCourse] = useState(false)
   const [courses,setCourses] = useState([])
-  const [allCourses] = useCourses(undefined) as any
+  const allCourses = useContext(allCourse) as any
   const [categories] = useCategories()
   const pp = getUrlParam('sort')
     
  
 
   useEffect(()=>{
-    const filteredCourses = dateFilterCourses(pp,allCourses)
+    const filteredCourses = dateFilterCourses(pp,allCourses?.courses)
     setCourses(filteredCourses)
 
   },[allCourses?.length])
 
  
   const handleFilterDates = (e:any) => {
-   const filteredCourses = dateFilterCourses(e.target.value,allCourses)
+   const filteredCourses = dateFilterCourses(e.target.value,allCourses?.courses)
    setCourses(filteredCourses)
    setUrlParam('sort',e.target.value)
   }
 
   const handleCatFilters = (e:any) => {
    const catFilter = e.target.value
-   const catCourses = allCourses?.filter((course:any)=>course.categoryID.name === catFilter)
+   const catCourses = allCourses?.courses.filter((course:any)=>course.categoryID.name === catFilter)
    setCourses(catCourses)
 
   }
 
   const handleSearchCourses = (e:string) =>{
-    const filteredCourses = allCourses.filter((course:any)=>course.name.includes(e))
+    const filteredCourses = allCourses?.courses.filter((course:any)=>course.name.includes(e))
     setCourses(filteredCourses)
   }
  
