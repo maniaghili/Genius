@@ -3,11 +3,12 @@ import Heartcircle from '../heartcircle/heartcircle'
 import { Link } from 'react-router-dom'
 import Aos from 'aos';
 import { memo, useEffect } from 'react';
-
+import ceatorP from './../../../public/downloadi.png'
 const coursebox:React.FC = memo(({...course}:any) => {
     useEffect(()=>{
         Aos.init()
     })
+console.log(course);
 
 
   return (
@@ -32,8 +33,8 @@ const coursebox:React.FC = memo(({...course}:any) => {
                         </div>
                     </div>
                     <div className="w-full h-16 flex justify-between items-center">
-                        <div className="w-9/12  h-full flex items-center">
-                        <img src={`https://academic.liara.run/courses/covers/${course?.cover}`} className="w-10 rounded-full h-10" alt="user" />
+                        <div className="w-9/12  h-full gap-2 flex items-center">
+                        <img src={ceatorP} className="w-10 rounded-full h-10" alt="user" />
                         <div className="h-10 w-full">
                             <p className="opacity-70 ss">مدرس دوره:</p>
                             <span className="ss">{course.creator}</span>

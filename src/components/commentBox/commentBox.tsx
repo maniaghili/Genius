@@ -1,6 +1,7 @@
 
 import { changeTime } from "../../assets/funcs/changeTime";
 import Heartcircle from "../heartcircle/heartcircle"
+import creatorp from './../../../public/downloadi.png'
 
 const commentBox = ({...comment}) => {
   
@@ -10,7 +11,7 @@ const commentBox = ({...comment}) => {
     <div className="flex justify-between w-full m-2 mt-4">
       <div className="flex mr-3">
           <div className="flex mr-3 gap-2">
-           <img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+           <img src={creatorp} className="w-10 rounded-full h-10" alt="" />
             <div>
                <p className="font-bold text-[12px]">{comment.creator.name}</p>
                <p className="font-bold text-[12px] opacity-70">{changeTime(comment.createdAt)}</p>
@@ -38,7 +39,7 @@ const commentBox = ({...comment}) => {
   <div className="flex justify-between w-full m-2 mt-4">
     <div className="flex mr-3">
         <div className="flex mr-3 gap-2">
-         <img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+         <img src={creatorp} className="w-10 rounded-full h-10" alt="" />
           <div>
              <p className="font-bold text-[12px]">{comment.answerContent.creator.name}</p>
              <p className="font-bold text-[12px] opacity-70">{changeTime(comment.answerContent.createdAt)}</p>

@@ -4,6 +4,7 @@ import { changeTime } from "../../assets/funcs/changeTime";
 import axios from "axios";
 import { showSwal } from "../../utils/swal";
 import { showIziToast } from "../../utils/util";
+import creatorp from './../../../public/downloadi.png'
 
 const submitCommentBox = ({shortName}:{shortName:string}) => {
   const user = useContext(userInfo)
@@ -41,7 +42,7 @@ const submitCommentBox = ({shortName}:{shortName:string}) => {
             <div className="border dark:border-gray-700 rounded-2xl flex flex-col gap-5">
               <div className="flex justify-center"><p className="font-bold text-[12px] mr-3 opacity-80 mt-3  ">ارسال دیدگاه</p></div> 
               <div className="flex mr-3 gap-2">
-                <img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+                <img src={creatorp} className="w-10 rounded-full h-10" alt="" />
                 <div>
                   <p className="font-bold text-[12px]">{user.userToken?user.userInfos.name:'کاربر مهمان'}</p>
                   <p className="font-bold text-[12px] opacity-70">{changeTime(new Date as any)}</p>

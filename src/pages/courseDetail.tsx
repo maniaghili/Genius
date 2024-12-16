@@ -11,6 +11,8 @@ import { useSingleCourse } from "../assets/hooks/getSingleCourse";
 import SubmitCommentBox from "../components/submitCommentsBox/submitCommentBox";
 import { changeTime } from "../assets/funcs/changeTime";
 import { getLocalStorage, setLocalStorage, showIziToast } from "../utils/util";
+import creatorp from './../../public/downloadi.png';
+
 const courseDetail = memo(() => {
 
   const [basket,setBasket] = useState([{}])
@@ -165,7 +167,7 @@ const courseDetail = memo(() => {
                  <div className="flex w-fit mr-3 justify-start">
              <div>
              <div className="flex gap-2">
-               < img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+               < img src={creatorp} className="w-10 rounded-full h-10" alt="" />
                       <div>
                            <p className="font-bold text-[12px]">{courseInfos?.creator.name} </p>
                           <p className="font-bold text-[12px] opacity-70">{courseInfos && changeTime(courseInfos.creator.updatedAt)}</p>

@@ -5,6 +5,8 @@ import FooterBottom from "../components/footerBottom/footerBottom"
 import { useParams } from "react-router-dom";
 import { useSingleArticle } from "../assets/hooks/getSingleArticle";
 import { changeTime } from "../assets/funcs/changeTime";
+import creatorp from './../../public/downloadi.png'
+
 const articleDetail = memo(() => {
   const param = useParams().articleName
 
@@ -51,7 +53,7 @@ const articleDetail = memo(() => {
                    <div className="flex w-fit mr-3 justify-start">
                <div>
                <div className="flex gap-2">
-                 < img src="../../public/01.jpeg" className="w-10 rounded-full h-10" alt="" />
+                 < img src={creatorp} className="w-10 rounded-full h-10" alt="" />
                         <div>
                              <p className="font-bold text-[12px]">{articles?.creator.name}</p>
                             <p className="font-bold text-[12px] opacity-70">{articles && changeTime(articles.creator.createdAt)} </p>
